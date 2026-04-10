@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primary School - Indian High School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+}
+/* NAVBAR */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: 0.3s;
+  background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+/* CONTAINER */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+}
+
+/* LOGO */
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0077ff;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* SCROLL EFFECT */
+.header.scrolled {
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    background: #ffffff;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+}
+/* HERO */
+.page-hero{
+  height:70vh;
+  background:url('https://res.cloudinary.com/dkhmpija5/image/upload/v1775756788/DSC_0667_dobs1d.jpg') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.page-hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+.page-hero h1{
+  color:#fff;
+  font-size:3rem;
+  z-index:2;
+}
+
+/* SECTION */
+.section{
+  padding:80px 8%;
+}
+
+/* SPLIT SECTION */
+.split{
+  display:flex;
+  align-items:center;
+  gap:50px;
+  flex-wrap:wrap;
+}
+
+.split .image,
+.split .text{
+  flex:1;
+  min-width:280px;
+}
+
+.split img{
+  width:100%;
+  border-radius:15px;
+  transition:0.5s;
+}
+
+.split img:hover{
+  transform:scale(1.08);
+}
+
+.split h2{
+  margin-bottom:10px;
+}
+
+.split p{
+  color:#555;
+}
+
+/* FACILITIES */
+.center{
+  text-align:center;
+}
+
+.center h2{
+  font-size:2.2rem;
+}
+
+/* GRID (3 CARDS) */
+.features{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:25px;
+  margin-top:40px;
+}
+
+/* CARD */
+.feature{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.feature-img{
+  height:200px;
+  overflow:hidden;
+}
+
+.feature-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.feature:hover img{
+  transform:scale(1.1);
+}
+
+.feature:hover{
+  transform:translateY(-8px);
+}
+
+.feature h3{
+  margin:15px;
+  color:#0077ff;
+}
+
+.feature p{
+  margin:0 15px 20px;
+  color:#555;
+  font-size:0.9rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .features{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:500px){
+  .features{
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero h1{
+    font-size:2rem;
+    text-align:center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<header class="header">
+
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      Indian High School
+    </div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#facilities">Facilities</a></li>
+      <li><a href="index.html#academics">Academics</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#contact">Admissions</a></li>
+    </ul>
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+  </div>
+
+</header>
+<!-- HERO -->
+<section class="page-hero">
+  <h1>Primary School</h1>
+</section>
+
+<!-- CINEMATIC SPLIT -->
+<section class="section">
+  <div class="split">
+
+    <div class="image">
+      <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1775756717/DSC_0658_besl67.jpg">
+    </div>
+
+    <div class="text">
+      <h2>Learning Beyond Books</h2>
+      <p>
+        Our Primary School blends academic excellence with creativity,
+        helping students grow with confidence and curiosity.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section center">
+
+  <h2>Our Facilities</h2>
+
+  <div class="features">
+
+    <!-- CARD 1 -->
+    <div class="feature">
+      <div class="feature-img">
+        <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1775756739/DSC_0664_tq4tkb.jpg">
+      </div>
+      <h3>Smart Classrooms</h3>
+      <p>Interactive digital learning environment</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="feature">
+      <div class="feature-img">
+        <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1774851509/28sf_tm6c_230329_fupcpz.jpg">
+      </div>
+      <h3>Sports Activities</h3>
+      <p>Encouraging fitness and teamwork</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="feature">
+      <div class="feature-img">
+        <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1775756762/DSC_0669_xjt74k.jpg">
+      </div>
+      <h3>Activity Rooms</h3>
+      <p>Creative and skill-based learning</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="feature">
+      <div class="feature-img">
+        <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1774851330/learning-education-ideas-insight-intelligence-study-concept_hola9k.jpg">
+      </div>
+      <h3>Computer Lab</h3>
+      <p>Technology-enabled learning environment</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="feature">
+      <div class="feature-img">
+        <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1775757926/DSC_0623_kj2aqo.jpg">
+      </div>
+      <h3>Transport Facility</h3>
+      <p>Safe and reliable school transportation</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="feature">
+      <div class="feature-img">
+        <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1775757944/DSC_0647_s1fa2p.jpg">
+      </div>
+      <h3>Safe Campus</h3>
+      <p>Secure and student-friendly environment</p>
+    </div>
+
+  </div>
+
+</section>
+<script>
+  // Navbar scroll effect
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+// Mobile menu toggle
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>
