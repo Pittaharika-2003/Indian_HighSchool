@@ -83,3 +83,55 @@ menuToggle.addEventListener("click", () => {
 function openPage(page) {
   window.location.href = page;
 }
+
+function toggleButton(e, clickedBtn) {
+
+  // Allow redirect only for map button
+  if (!clickedBtn.classList.contains('map-btn')) {
+    e.preventDefault();
+  }
+
+  // Toggle active
+  if (clickedBtn.classList.contains('active')) {
+    clickedBtn.classList.remove('active');
+    return;
+  }
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  clickedBtn.classList.add('active');
+}
+
+const form = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); // stop default redirect
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset();
+      successMessage.style.display = "block";
+
+      // redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = "#home"; // OR your full link
+        // window.location.href = "https://pioneer-highschool.vercel.app/";
+      }, 3000);
+    } else {
+      alert("Something went wrong!");
+    }
+  })
+  .catch(() => {
+    alert("Error submitting form");
+  });
+});
