@@ -24,7 +24,7 @@
 
     <!-- NAV LINKS -->
     <ul class="nav-links" id="navLinks">
-      <li><a href="#hero">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#facilities">Facilities</a></li>
       <li><a href="#academics">Academics</a></li>
@@ -41,7 +41,7 @@
 
 </header>
 <!-- HERO SECTION -->
-<section class="hero">
+<section class="hero" id="home" >
 
     <!-- VIDEO -->
     <video autoplay muted loop id="bgVideo">
@@ -62,8 +62,13 @@
       </p>
 
       <div class="buttons">
-        <a href="#" class="btn primary">Apply Now</a>
-        <a href="#" class="btn secondary">Explore More</a>
+        <a href="#contact" class="btn primary">Apply Now</a>
+        <a href="https://share.google/PikV9bVWYeVjFUoQT"
+          target="_blank"
+          class="btn map-btn"
+          onclick="toggleButton(event, this)">
+          Explore More
+        </a>
       </div>
     </div>
 </section>
@@ -282,27 +287,38 @@
 
   <h2 class="section-title">Admissions Open</h2>
 
-  <div class="contact-container">
+    <div class="contact-form">
 
-    <!-- FORM -->
-    <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST" class="contact-form">
+      <form action="https://formsubmit.co/indianhighschoolwgl@gmail.com" method="POST" id="contactForm">
 
-      <!-- Hidden settings -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="thankyou.html">
+  <input type="text" name="Name" placeholder="Student Name" required>
 
-      <input type="text" name="name" placeholder="Student Name" required>
-      <input type="text" name="parent" placeholder="Parent Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="class" placeholder="Applying For Class" required>
+  <input type="text" name="Parent Name" placeholder="Parent Name" required>
 
-      <textarea name="message" placeholder="Message (Optional)"></textarea>
+  <input type="text" name="Date of Birth" placeholder="date of birth" required>
 
-      <button type="submit">Submit Application</button>
+  <input type="text" name="Class" placeholder="Grade Applying For" required>
 
-    </form>
+  <input type="tel" name="Phone Number" placeholder="Phone Number" required>
 
-  </div>
+  <input type="text" name="Class" placeholder="Email Id" required>
+
+  <input type="text" name="Location" placeholder="Address" required>
+
+  <!-- SETTINGS -->
+  <input type="hidden" name="_subject" value="New Admission Inquiry">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit">Submit Application</button>
+
+</form>
+
+
+    </div>
+    <div id="successMessage" style="display:none; text-align:center; margin-top:20px; color:green;">
+  ✅ Thank you for submitting the form! Redirecting to homepage...
+</div>
 
 </section>
 <!-- FOOTER -->
@@ -333,9 +349,9 @@
     <!-- CONTACT -->
     <div class="footer-box">
       <h3>Contact</h3>
-      <p>📍 Your School Location</p>
-      <p>📞 +91 XXXXX XXXXX</p>
-      <p>📧 yourschool@email.com</p>
+      <p>📍 XJ97+HR9 Upendra Nilayam, 16-9-140, beside Fortbridge, Puppalagutta, Warangal, Telangana 506002</p>
+      <p>📞 +91 81439 85005/p>
+      <p>📧 indianhighschoolwgl@gmail.com</p>
     </div>
 
   </div>
