@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -16,94 +15,102 @@
   font-family:'Poppins',sans-serif;
 }
 
-body{
-  background:#ffffff;
-}
 /* NAVBAR */
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: 0.3s;
-
+.header{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:1000;
+  transition:0.3s;
 }
 
-/* CONTAINER */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
+/* NAV CONTAINER */
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 5%;
 }
 
 /* LOGO */
-.logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #111;
+.logo img{
+  height:65px;
+  
 }
 
 /* LINKS */
-.nav-links {
-  display: flex;
-  list-style: none;
+.nav-links{
+  display:flex;
+  list-style:none;
 }
 
-.nav-links li {
-  margin-left: 25px;
+.nav-links li{
+  margin-left:25px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  transition: 0.3s;
+.nav-links a{
+  text-decoration:none;
+  color:#ffffff; /* visible on video */
+  font-weight:500;
+  transition:0.3s;
 }
 
-.nav-links a:hover {
-  color: #0077ff;
+.nav-links a:hover{
+  color:#0077ff;
 }
 
-/* MOBILE MENU */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+/* SCROLL NAVBAR */
+.header.scrolled{
+  background:#ffffffa1;
+  backdrop-filter: blur(12px);          /* 🔥 main blur */
+  -webkit-backdrop-filter: blur(12px); 
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-/* SCROLL EFFECT */
-.header.scrolled {
-  background: #ffffff;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+.header.scrolled .nav-links a{
+  color:#111;
+}
+
+.header.scrolled .logo img{
+  filter:none;
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+.menu-toggle{
+  display:none;
+  font-size:1.6rem;
+  color:#fff;
+  cursor:pointer;
+}
 
-  .menu-toggle {
-    display: block;
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: -100%;
-    background: #ffffff;
-    flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    flex-direction:column;
+    background:#fff;
+    width:220px;
+    padding:20px;
+    transition:0.3s;
   }
 
-  .nav-links li {
-    margin: 15px 0;
+  .nav-links li{
+    margin:15px 0;
   }
 
-  .nav-links.active {
-    right: 0;
+  .nav-links a{
+    color:#111;
+  }
+
+  .nav-links.active{
+    right:0;
   }
 }
 /* HERO */
@@ -253,27 +260,26 @@ body{
 
     <!-- LOGO -->
     <div class="logo">
-      Indian High School
+      <img src="https://res.cloudinary.com/dkhmpija5/image/upload/v1774941084/indian_logo_twb8ce.png" alt="Indian High School Logo">
     </div>
 
     <!-- NAV LINKS -->
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#facilities">Facilities</a></li>
-      <li><a href="index.html#academics">Academics</a></li>
-      <li><a href="index.html#gallery">Gallery</a></li>
-      <li><a href="index.html#contact">Admissions</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Admissions</a></li>
     </ul>
 
     <!-- HAMBURGER -->
-    <div class="menu-toggle" id="menuToggle">
-      ☰
-    </div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
 
   </div>
 
 </header>
+
 <!-- HERO -->
 <section class="page-hero">
   <h1>Primary School (Classes 1–5)</h1>
